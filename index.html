@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bénin en chiffres — Population par département</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start">
+<div><h1>Bénin en chiffres</h1>
+<p class="sub">Population des 12 départements — recensements RGPH3 (2002) et RGPH4 (2013), INSAE</p></div>
+<button id="theme" aria-label="Changer de thème">◐ Thème</button></div>
+
+<div class="kpis" id="kpis"></div>
+
+<div class="card">
+  <div class="tools">
+    <select id="metric" aria-label="Indicateur">
+      <option value="p13">Population 2013</option>
+      <option value="p02">Population 2002</option>
+      <option value="gain">Habitants gagnés (2002–2013)</option>
+      <option value="pct">Croissance totale (%)</option>
+      <option value="rate">Taux annuel moyen (%)</option>
+    </select>
+    <select id="sort" aria-label="Trier">
+      <option value="desc">Du plus grand au plus petit</option>
+      <option value="asc">Du plus petit au plus grand</option>
+      <option value="alpha">Ordre alphabétique</option>
+    </select>
+    <select id="zone" aria-label="Zone">
+      <option value="all">Tout le pays</option>
+      <option value="nord">Nord (4 départements)</option>
+      <option value="sud">Sud et centre (8 départements)</option>
+    </select>
+    <input id="q" type="search" placeholder="Rechercher un département">
+    <label class="lbl"><input type="checkbox" id="cmp"> Comparer 2002 / 2013</label>
+  </div>
+  <div class="chart"><canvas id="chart" aria-label="Graphique par département"></canvas></div>
+</div>
+
+<div class="card detail" id="detail" hidden></div>
+
+<div class="card scroll" style="margin-top:12px">
+  <table>
+    <thead><tr><th class="n">#</th><th>Département</th><th>Zone</th><th class="n">2002</th><th class="n">2013</th><th class="n">Évolution</th><th class="n">Taux annuel</th><th style="width:18%"></th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+</div>
+
+<footer>Sources : INSAE / INStaD, RGPH3 2002 (total 6 769 914) et RGPH4 2013 (total 10 008 749). Taux annuel calculé sur 11,25 ans : il peut différer légèrement des taux publiés par l’INSAE. « Nord » = Alibori, Atacora, Borgou, Donga. Clique sur une ligne ou une barre pour le détail. Projet d’apprentissage Python/JS.</footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

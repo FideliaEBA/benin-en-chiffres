@@ -1,0 +1,27 @@
+:root{--bg:#f5f7fb;--card:#fff;--text:#1b2433;--muted:#5d6879;--line:#e3e8f0;--accent:#2f6fde;--north:#e0892b;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1624;--card:#18223a;--text:#e8edf7;--muted:#9aa7bd;--line:#2a3652;--accent:#6ea0ff;--north:#f0a24f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1624;--card:#18223a;--text:#e8edf7;--muted:#9aa7bd;--line:#2a3652;--accent:#6ea0ff;--north:#f0a24f;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+main{max-width:960px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:1.6rem;margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 20px;font-size:.92rem}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.kpi b{display:block;font-size:1.5rem}
+.kpi span{color:var(--muted);font-size:.85rem}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+select,input{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:.92rem}
+.chart{height:420px;position:relative}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{color:var(--muted);font-weight:600}
+td.n,th.n{text-align:right}
+tr.row{cursor:pointer}tr.row:hover,tr.sel{background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.detail{margin:12px 0;border-left:4px solid var(--accent)}.detail h3{margin:0 0 4px;font-size:1.1rem}.detail p{margin:2px 0;color:var(--muted);font-size:.92rem}
+.lbl{display:flex;align-items:center;gap:6px;font-size:.9rem;color:var(--muted)}button{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer;font-size:.92rem}
+.tag{font-size:.75rem;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.tag.nord{color:var(--north);border-color:var(--north)}
+.bar{height:6px;border-radius:3px;background:var(--accent);min-width:2px}
+footer{color:var(--muted);font-size:.8rem;margin-top:18px}
